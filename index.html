@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Clevius - Personal Portfolio</title>
+    <title>Clevius Almeida - Senior Solution Engineer & AI Enthusiast</title>
     <style>
         * {
             margin: 0;
@@ -12,285 +12,643 @@
         }
         
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             line-height: 1.6;
-            color: #333;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
+            color: #1a202c;
+            background: #f7fafc;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #2d3748 0%, #1a202c 100%);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 20"><defs><linearGradient id="a" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="%23ffffff" stop-opacity="0.1"/><stop offset="100%" stop-color="%23ffffff" stop-opacity="0.05"/></linearGradient></defs><polygon fill="url(%23a)" points="0,20 100,0 100,20"/></svg>');
+            opacity: 0.1;
+        }
+        
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .header h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            background: linear-gradient(135deg, #63b3ed, #4299e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .header .tagline {
+            font-size: 1.4rem;
+            font-weight: 300;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+        
+        .header .cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #4299e1, #3182ce);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(66, 153, 225, 0.4);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border-color: rgba(255,255,255,0.3);
+        }
+        
+        .btn-secondary:hover {
+            background: rgba(255,255,255,0.1);
+            border-color: rgba(255,255,255,0.5);
         }
         
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 20px;
-        }
-        
-        .hero {
-            text-align: center;
-            padding: 60px 0;
-            color: white;
-            margin-bottom: 40px;
-        }
-        
-        .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 20px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-        }
-        
-        .hero p {
-            font-size: 1.3rem;
-            margin-bottom: 30px;
-            opacity: 0.9;
-        }
-        
-        .content {
-            background: rgba(255, 255, 255, 0.95);
-            border-radius: 20px;
-            padding: 40px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
-            backdrop-filter: blur(10px);
+            padding: 0 20px;
         }
         
         .section {
-            margin-bottom: 50px;
+            padding: 80px 0;
         }
         
-        .section h2 {
-            color: #4a5568;
-            font-size: 2.2rem;
-            margin-bottom: 20px;
+        .section-title {
             text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #2d3748;
+            margin-bottom: 15px;
             position: relative;
         }
         
-        .section h2::after {
-            content: '';
-            width: 60px;
-            height: 3px;
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            display: block;
-            margin: 10px auto;
-            border-radius: 2px;
+        .section-title p {
+            font-size: 1.2rem;
+            color: #718096;
+            max-width: 600px;
+            margin: 0 auto;
         }
         
-        .about p {
+        .experience-timeline {
+            position: relative;
+            margin: 60px 0;
+        }
+        
+        .timeline-line {
+            position: absolute;
+            left: 30px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(180deg, #4299e1, #63b3ed);
+        }
+        
+        .timeline-item {
+            position: relative;
+            margin-bottom: 60px;
+            padding-left: 80px;
+        }
+        
+        .timeline-dot {
+            position: absolute;
+            left: 21px;
+            top: 8px;
+            width: 18px;
+            height: 18px;
+            background: #4299e1;
+            border: 4px solid white;
+            border-radius: 50%;
+            box-shadow: 0 0 0 4px #e2e8f0;
+        }
+        
+        .timeline-content {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            border-left: 4px solid #4299e1;
+        }
+        
+        .timeline-content h3 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: #2d3748;
+            margin-bottom: 8px;
+        }
+        
+        .timeline-content .company {
             font-size: 1.1rem;
-            text-align: center;
-            max-width: 800px;
-            margin: 0 auto;
-            color: #555;
+            color: #4299e1;
+            font-weight: 500;
+            margin-bottom: 5px;
+        }
+        
+        .timeline-content .duration {
+            color: #718096;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+        
+        .timeline-content ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .timeline-content li {
+            margin-bottom: 8px;
+            padding-left: 20px;
+            position: relative;
+            color: #4a5568;
+        }
+        
+        .timeline-content li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: #4299e1;
+            font-weight: bold;
+        }
+        
+        .skills-section {
+            background: white;
         }
         
         .skills-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-            margin-top: 30px;
-        }
-        
-        .skill-card {
-            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-            color: white;
-            padding: 20px;
-            border-radius: 15px;
-            text-align: center;
-            transform: translateY(0);
-            transition: all 0.3s ease;
-            box-shadow: 0 5px 20px rgba(240, 147, 251, 0.3);
-        }
-        
-        .skill-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(240, 147, 251, 0.4);
-        }
-        
-        .skill-card h3 {
-            font-size: 1.3rem;
-            margin-bottom: 10px;
-        }
-        
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 30px;
-            margin-top: 30px;
+            margin-top: 40px;
         }
         
-        .project-card {
-            background: white;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        .skill-category {
+            background: #f7fafc;
+            padding: 30px;
+            border-radius: 12px;
+            border: 1px solid #e2e8f0;
             transition: all 0.3s ease;
         }
         
-        .project-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        .skill-category:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border-color: #4299e1;
         }
         
-        .project-content {
-            padding: 25px;
+        .skill-category h4 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #2d3748;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
         
-        .project-card h3 {
+        .skill-category .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        
+        .skill-tag {
+            background: #e2e8f0;
             color: #4a5568;
-            font-size: 1.4rem;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+        
+        .achievement-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .achievement-card {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            border-top: 4px solid #4299e1;
+            transition: all 0.3s ease;
+        }
+        
+        .achievement-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+        
+        .achievement-card h4 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #2d3748;
             margin-bottom: 15px;
         }
         
-        .project-card p {
-            color: #666;
-            margin-bottom: 20px;
+        .achievement-card p {
+            color: #4a5568;
+            line-height: 1.7;
         }
         
-        .project-link {
-            display: inline-block;
-            background: linear-gradient(135deg, #667eea, #764ba2);
+        .contact-section {
+            background: linear-gradient(135deg, #2d3748 0%, #1a202c 100%);
             color: white;
-            padding: 10px 20px;
-            text-decoration: none;
-            border-radius: 25px;
-            transition: all 0.3s ease;
-        }
-        
-        .project-link:hover {
-            background: linear-gradient(135deg, #764ba2, #667eea);
-            transform: scale(1.05);
-        }
-        
-        .contact {
             text-align: center;
-            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-            color: white;
-            padding: 40px;
-            border-radius: 20px;
-            margin-top: 30px;
         }
         
-        .contact-links {
-            display: flex;
-            justify-content: center;
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 20px;
-            margin-top: 20px;
-            flex-wrap: wrap;
+            margin-top: 40px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
         }
         
-        .contact-links a {
-            color: white;
-            text-decoration: none;
-            padding: 12px 25px;
-            background: rgba(255,255,255,0.2);
-            border-radius: 25px;
+        .contact-card {
+            background: rgba(255,255,255,0.1);
+            padding: 25px;
+            border-radius: 12px;
             transition: all 0.3s ease;
             backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.1);
         }
         
-        .contact-links a:hover {
-            background: rgba(255,255,255,0.3);
-            transform: translateY(-2px);
+        .contact-card:hover {
+            background: rgba(255,255,255,0.15);
+            transform: translateY(-3px);
+        }
+        
+        .contact-card a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .contact-card .icon {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            display: block;
         }
         
         @media (max-width: 768px) {
-            .hero h1 {
+            .header h1 {
                 font-size: 2.5rem;
             }
             
-            .content {
-                padding: 20px;
+            .header .tagline {
+                font-size: 1.1rem;
             }
             
-            .contact-links {
+            .header .cta {
                 flex-direction: column;
                 align-items: center;
+            }
+            
+            .timeline-item {
+                padding-left: 60px;
+            }
+            
+            .timeline-line {
+                left: 20px;
+            }
+            
+            .timeline-dot {
+                left: 11px;
+            }
+            
+            .section {
+                padding: 60px 0;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
             }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="hero">
-            <h1>Hi, I'm Clevius Almeida</h1>
-            <p>Senior Solution Engineer | AI Enthusiast | Presales & Digital Transformation</p>
+    <header class="header">
+        <div class="header-content">
+            <h1>Clevius Almeida</h1>
+            <p class="tagline">Senior Solution Engineer | AI Enthusiast | Presales & Digital Transformation</p>
+            <div class="cta">
+                <a href="https://www.linkedin.com/in/cleviusalmeida/" class="btn btn-primary">
+                    <span>🔗</span> Connect on LinkedIn
+                </a>
+                <a href="#experience" class="btn btn-secondary">
+                    <span>📋</span> View Experience
+                </a>
+            </div>
         </div>
-        
-        <div class="content">
-            <div class="section about">
-                <h2>About Me</h2>
-                <p>I'm a <strong>Senior Solution Engineer</strong> with 9+ years of experience spanning presales, solution architecture, digital transformation, and IT project delivery across fintech and communication technology. At <strong>Infobip</strong>, I lead technical solutioning and presales engagements for enterprise customers — bridging business challenges with technology-driven solutions.</p>
-                <br>
-                <p>Beyond my core role, I'm an <strong>AI enthusiast</strong> — continuously learning, experimenting, and applying concepts from generative AI, large language models, and automation workflows. My goal is to evolve into an <strong>AI Generalist</strong>, blending my solution engineering experience with applied AI to create business impact at scale.</p>
+    </header>
+
+    <section class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Professional Journey</h2>
+                <p>9+ years of experience spanning presales, solution architecture, digital transformation, and IT project delivery across fintech and communication technology.</p>
             </div>
             
-            <div class="section skills">
-                <h2>Skills & Interests</h2>
-                <div class="skills-grid">
-                    <div class="skill-card">
-                        <h3>Solution Engineering</h3>
-                        <p>Presales, PoCs, Technical Architecture</p>
-                    </div>
-                    <div class="skill-card">
-                        <h3>AI & Emerging Tech</h3>
-                        <p>Generative AI, LLMs, Automation</p>
-                    </div>
-                    <div class="skill-card">
-                        <h3>Digital Banking</h3>
-                        <p>APIs, Integrations, Payment Systems</p>
-                    </div>
-                    <div class="skill-card">
-                        <h3>Enterprise Solutions</h3>
-                        <p>Customer Success, Digital Transformation</p>
-                    </div>
-                    <div class="skill-card">
-                        <h3>Technical Presentations</h3>
-                        <p>Stakeholder Engagement, Demos</p>
-                    </div>
-                    <div class="skill-card">
-                        <h3>Software Development</h3>
-                        <p>ASP.NET, SQL Server, System Integration</p>
-                    </div>
-                </div>
-            </div>
+            <p style="text-align: center; font-size: 1.2rem; color: #4a5568; max-width: 900px; margin: 0 auto 40px; line-height: 1.8;">
+                At <strong>Infobip</strong>, I lead technical solutioning and presales engagements for enterprise customers — bridging business challenges with technology-driven solutions. Beyond my core role, I'm an <strong>AI enthusiast</strong> continuously exploring how generative AI, LLMs, and automation can transform presales, solution engineering, and enterprise operations.
+            </p>
             
-            <div class="section projects">
+            <div style="text-align: center; background: linear-gradient(135deg, #e6fffa, #b2f5ea); padding: 30px; border-radius: 12px; border-left: 4px solid #38b2ac; margin: 40px 0;">
+                <h3 style="color: #234e52; margin-bottom: 15px; font-size: 1.4rem;">🌟 Current Goal</h3>
+                <p style="color: #285e61; font-size: 1.1rem; font-weight: 500;">Evolving into an AI Generalist — blending solution engineering experience with applied AI to create business impact at scale</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience" class="section">
+        <div class="container">
+            <div class="section-title">
                 <h2>Professional Experience</h2>
-                <div class="projects-grid">
-                    <div class="project-card">
-                        <div class="project-content">
-                            <h3>Infobip - Senior Solution Engineer</h3>
-                            <p>Leading solution design and presales engagements for enterprise customers. Driving customer adoption through AI-enhanced demos, PoCs, and strategic solution alignment with business goals.</p>
-                            <a href="https://www.infobip.com" class="project-link">Learn More</a>
-                        </div>
+                <p>Key roles and achievements throughout my career journey</p>
+            </div>
+            
+            <div class="experience-timeline">
+                <div class="timeline-line"></div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>Senior Solution Engineer</h3>
+                        <div class="company">Infobip</div>
+                        <div class="duration">Sep 2025 – Present</div>
+                        <ul>
+                            <li>Lead solution design and presales engagements for enterprise customers, focusing on innovation and AI-driven workflows</li>
+                            <li>Drive customer adoption by designing proof-of-concepts, conducting AI-enhanced demos, and aligning solutions to business goals</li>
+                            <li>Partner with product and sales teams to shape solution strategies, incorporating AI opportunities for presales automation and customer success</li>
+                        </ul>
                     </div>
-                    <div class="project-card">
-                        <div class="project-content">
-                            <h3>Digital Banking Transformation</h3>
-                            <p>Led CBS migration, Mobile Banking, UPI, and payment gateway integrations at Bassein Catholic Bank. Delivered end-to-end digital banking solutions and automation tools.</p>
-                            <a href="#" class="project-link">View Details</a>
-                        </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>Solution Sales Engineer</h3>
+                        <div class="company">Infobip</div>
+                        <div class="duration">May 2021 – Sep 2025</div>
+                        <ul>
+                            <li>Designed and delivered technical presentations, solution architectures, and presales proposals that contributed to enterprise customer wins</li>
+                            <li>Spearheaded PoCs and technical evaluations, ensuring alignment of proposed solutions with customer needs</li>
+                            <li>Collaborated with Product Management to provide field insights, influencing product direction</li>
+                            <li>Explored AI-driven tools and workflows to enhance proposal development and solution validation</li>
+                        </ul>
                     </div>
-                    <div class="project-card">
-                        <div class="project-content">
-                            <h3>AI-Driven Presales Innovation</h3>
-                            <p>Exploring AI workflows to enhance proposal development, solution validation, and customer engagement. Integrating generative AI concepts into presales processes.</p>
-                            <a href="#" class="project-link">Explore AI Work</a>
-                        </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>Assistant Manager – IT</h3>
+                        <div class="company">Bassein Catholic Co-Operative Bank</div>
+                        <div class="duration">Jul 2016 – May 2021</div>
+                        <ul>
+                            <li>Led digital transformation projects including CBS migration, Mobile Banking, IMPS, UPI, QR Merchant Payments, and School Fee Payment integrations</li>
+                            <li>Developed reconciliation modules and automation tools, reducing manual processes and enhancing operational accuracy</li>
+                            <li>Drove vendor management, requirement gathering, UAT, and end-to-end rollout of digital banking solutions</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>Software Engineer</h3>
+                        <div class="company">Atom Technologies (NTT Data)</div>
+                        <div class="duration">Oct 2015 – Jul 2016</div>
+                        <ul>
+                            <li>Developed and optimized ASP.NET applications for prepaid wallets and Paynetz payment solutions</li>
+                            <li>Designed workflows, wrote efficient queries, and solved client-facing technical issues</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>Engineer Trainee (Software Development)</h3>
+                        <div class="company">Maharashtra Knowledge Corporation Ltd.</div>
+                        <div class="duration">Oct 2014 – Oct 2015</div>
+                        <ul>
+                            <li>Designed and developed applications using ASP.NET and SQL Server</li>
+                            <li>Supported e-governance and e-learning projects with focus on database optimization and testing</li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </div>
-        
-        <div class="contact">
-            <h2>Let's Connect!</h2>
-            <p>Open to discussing AI opportunities, solution engineering, and digital transformation projects</p>
-            <div class="contact-links">
-                <a href="mailto:clevius.almeida@example.com">📧 Email</a>
-                <a href="https://www.linkedin.com/in/cleviusalmeida/">💼 LinkedIn</a>
-                <a href="https://github.com/Clevius">💻 GitHub</a>
-                <a href="#">🤖 AI Projects</a>
+    </section>
+
+    <section class="section skills-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Core Expertise</h2>
+                <p>Technical skills and domain knowledge accumulated over 9+ years</p>
+            </div>
+            
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h4><span>🎯</span> Solution Engineering</h4>
+                    <div class="skills-list">
+                        <span class="skill-tag">Presales</span>
+                        <span class="skill-tag">Solution Architecture</span>
+                        <span class="skill-tag">PoC Development</span>
+                        <span class="skill-tag">Technical Presentations</span>
+                        <span class="skill-tag">Customer Engagement</span>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h4><span>🤖</span> AI & Emerging Technologies</h4>
+                    <div class="skills-list">
+                        <span class="skill-tag">Generative AI</span>
+                        <span class="skill-tag">Large Language Models</span>
+                        <span class="skill-tag">Automation Workflows</span>
+                        <span class="skill-tag">AI-Enhanced Demos</span>
+                        <span class="skill-tag">Machine Learning</span>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h4><span>🏦</span> Digital Banking & Fintech</h4>
+                    <div class="skills-list">
+                        <span class="skill-tag">Payment Systems</span>
+                        <span class="skill-tag">API Integrations</span>
+                        <span class="skill-tag">UPI & IMPS</span>
+                        <span class="skill-tag">Mobile Banking</span>
+                        <span class="skill-tag">Digital Wallets</span>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h4><span>💻</span> Technical Development</h4>
+                    <div class="skills-list">
+                        <span class="skill-tag">ASP.NET</span>
+                        <span class="skill-tag">SQL Server</span>
+                        <span class="skill-tag">System Integration</span>
+                        <span class="skill-tag">Database Optimization</span>
+                        <span class="skill-tag">Workflow Design</span>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h4><span>🚀</span> Digital Transformation</h4>
+                    <div class="skills-list">
+                        <span class="skill-tag">Project Management</span>
+                        <span class="skill-tag">Vendor Management</span>
+                        <span class="skill-tag">UAT & Testing</span>
+                        <span class="skill-tag">Change Management</span>
+                        <span class="skill-tag">Process Automation</span>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h4><span>📈</span> Business Strategy</h4>
+                    <div class="skills-list">
+                        <span class="skill-tag">Stakeholder Management</span>
+                        <span class="skill-tag">Requirements Gathering</span>
+                        <span class="skill-tag">Cross-functional Collaboration</span>
+                        <span class="skill-tag">Product Strategy</span>
+                        <span class="skill-tag">Customer Success</span>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Key Achievements</h2>
+                <p>Highlights of impactful projects and contributions</p>
+            </div>
+            
+            <div class="achievement-cards">
+                <div class="achievement-card">
+                    <h4>🏆 Enterprise Presales Excellence</h4>
+                    <p>Successfully led presales engagements and technical evaluations that contributed to significant enterprise customer wins at Infobip, leveraging AI-enhanced demos and strategic solution alignment.</p>
+                </div>
+                
+                <div class="achievement-card">
+                    <h4>🏦 Digital Banking Transformation</h4>
+                    <p>Orchestrated comprehensive digital transformation at Bassein Catholic Bank, implementing CBS migration, mobile banking, UPI integrations, and payment gateways that modernized banking operations.</p>
+                </div>
+                
+                <div class="achievement-card">
+                    <h4>🤖 AI Innovation Leadership</h4>
+                    <p>Pioneering the integration of AI workflows into presales processes, exploring generative AI applications for proposal development, customer engagement, and solution validation.</p>
+                </div>
+                
+                <div class="achievement-card">
+                    <h4>⚙️ Process Automation Impact</h4>
+                    <p>Developed reconciliation modules and automation tools that significantly reduced manual processes, enhanced operational accuracy, and improved efficiency across banking operations.</p>
+                </div>
+                
+                <div class="achievement-card">
+                    <h4>🎯 Cross-functional Collaboration</h4>
+                    <p>Consistently partnered with product management, sales teams, and technical stakeholders to provide field insights, influence product direction, and ensure successful solution adoption.</p>
+                </div>
+                
+                <div class="achievement-card">
+                    <h4>📚 Continuous Learning Advocate</h4>
+                    <p>Actively expanding expertise in AI and emerging technologies while maintaining deep domain knowledge in solution engineering, presales, and digital transformation.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section contact-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Let's Connect</h2>
+                <p>Open to discussing AI opportunities, solution engineering roles, and digital transformation projects</p>
+            </div>
+            
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <a href="https://www.linkedin.com/in/cleviusalmeida/">
+                        <span class="icon">💼</span>
+                        <strong>LinkedIn</strong><br>
+                        Professional Network
+                    </a>
+                </div>
+                
+                <div class="contact-card">
+                    <a href="https://github.com/Clevius">
+                        <span class="icon">💻</span>
+                        <strong>GitHub</strong><br>
+                        Code & Projects
+                    </a>
+                </div>
+                
+                <div class="contact-card">
+                    <a href="mailto:clevius.almeida@example.com">
+                        <span class="icon">📧</span>
+                        <strong>Email</strong><br>
+                        Direct Contact
+                    </a>
+                </div>
+                
+                <div class="contact-card">
+                    <a href="#">
+                        <span class="icon">🤖</span>
+                        <strong>AI Portfolio</strong><br>
+                        Latest AI Work
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
 </body>
 </html>
